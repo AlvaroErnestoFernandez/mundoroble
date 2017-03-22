@@ -12,5 +12,39 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('ventas.index');
+});
+
+Route::get('/ventas', function () {
+    return 'ventas raiz';
+});
+
+Route::get('/ventas/crear', function () {
+    return 'ventas crear';
+});
+Route::post('/ventas/crear', function () {
+    return 'ventas crear';
+});
+
+Route::get('/ventas/recibo/{id}', function ($id) {
+    return 'ventas recibo '.$id;
+});
+
+Route::get('/productos', function () {
+    return 'productos raiz';
+});
+
+Route::get('/productos/pendientes', function () {
+    return 'productos pendientes';
+});
+
+Route::get('/productos/entregados', function () {
+    return 'productos entregados';
+});
+
+Route::get('/productos/crear', function () {
+    return 'productos crear';
+});
+Route::post('/productos/crear', function () {
+    return 'productos crear';
 });
