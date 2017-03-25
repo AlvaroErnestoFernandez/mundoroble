@@ -29,7 +29,7 @@ class ProductoController extends Controller
 	{
 		return view('productos.crear');
 	}	
-	public function getProducto()
+	public function getProducto($id)
 	{
 		return view('productos.producto', ['id' => $id]);
 	}

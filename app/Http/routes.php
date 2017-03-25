@@ -1,5 +1,7 @@
 <?php
 
+Route::group(['middleware' => 'auth'], function() {
+
 Route::get('/', 'VentaController@getIndex');
 
 Route::get('/ventas/deldia', 'VentaController@getVentasdeldia');
@@ -20,4 +22,11 @@ Route::get('/productos/crear', 'ProductoController@getCrear');
 
 Route::post('/productos/crear', 'ProductoController@postCrear');
 
-Route::post('/productos/producto/{id}', 'ProductoController@getProducto');
+Route::get('/productos/producto/{id}', 'ProductoController@getProducto');
+
+
+
+});
+
+Route::auth();
+Route::get('/home', 'HomeController@index');
